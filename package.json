@@ -1,0 +1,30 @@
+{
+  "name": "cr-transclude",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "karma start --single-run",
+    "lint": "eslint --cache --format codeframe --ext mjs,js src test"
+  },
+  "peerDependencies": {
+    "angular": "^1.6"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb-base": "^9.4.0",
+    "@neutrinojs/karma": "^9.4.0",
+    "@neutrinojs/library": "^9.4.0",
+    "angular": "1.6.10",
+    "angular-mocks": "1.6.10",
+    "eslint": "^7",
+    "jquery": "^3.5.1",
+    "karma": "^5",
+    "karma-cli": "^2",
+    "mocha": "^8",
+    "neutrino": "^9.4.0",
+    "webpack": "^4",
+    "webpack-cli": "^3"
+  }
+}
