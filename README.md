@@ -1,7 +1,7 @@
 # cr-transclude
 Semi Template Transclude Directive for AngularJs/1 
 
-![Node.js CI](https://github.com/elpddev/cr-transclude/workflows/Node.js%20CI/badge.svg?branch=main)A
+![Node.js CI](https://github.com/elpddev/cr-transclude/workflows/Node.js%20CI/badge.svg?branch=main)
 
 An augmented `ng-transclude` directives that can pass custom data to the transcluded content from its parent. Somewhat like Angular/2 [template outlet](https://angular.io/api/common/NgTemplateOutlet).
 
