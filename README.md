@@ -32,8 +32,8 @@ In the transcluded content, there is access to the grandparent scope and the pro
 <div>{{ $ctrl.listName }}</div.
 
 <my-list items="$ctrl.movies">
-   <div"From context: { name }}</div>
-   <div"From grandparent: { $ctrl.listName }}</div>
+   <div"From context: {{ name }}</div>
+   <div"From grandparent: {{ $ctrl.listName }}</div>
 </my-list>
 ```
 
