@@ -41,6 +41,6 @@ In the transcluded content, there is access to the grandparent scope and the pro
 
 ## License
 
-[MIT]()
+[MIT](https://github.com/elpddev/cr-transclude/blob/main/LICENSE.md)
 
 
