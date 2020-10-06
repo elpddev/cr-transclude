@@ -5,6 +5,12 @@
   "main": "build/index.js",
   "license": "MIT",
   "module": "src/index.js",
+  "keywords": [
+    "angularjs",
+    "angular/1",
+    "transclude",
+    "ng-transclude"
+  ],
   "scripts": {
     "build": "webpack --mode production",
     "test": "karma start --single-run",
