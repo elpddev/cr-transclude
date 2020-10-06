@@ -5,6 +5,8 @@ Semi Template Transclude Directive for AngularJs/1
 
 An augmented `ng-transclude` directives that can pass custom data to the transcluded content from its parent. Somewhat like Angular/2 [template outlet](https://angular.io/api/common/NgTemplateOutlet).
 
+[Template Transclusion In AngularJs](https://medium.com/@eyal.lapid/template-transclusion-in-angularjs-da0b1e252be3)
+
 ## Install
 
 Package is available as [NPM package](https://www.npmjs.com/package/@code-restory/cr-transclude).
