@@ -47,13 +47,13 @@ In the transcluded content, there is access to the grandparent scope and the pro
 
 Many thanks to the people who contributed their knowledge and time in the github issues, documents and articles given below. They were invaluable.
 
-[AngularJs directive $compile document](https://docs.angularjs.org/api/ng/service/$compile#transclusion)
-[AngularJs ng-transclude directive & code](https://docs.angularjs.org/api/ng/directive/ngTransclude%5C)
-[AngularJS ng-repeat directive & code](https://docs.angularjs.org/api/ng/directive/ngRepeat#!)
-[Angular/2 ngTemplate outlet](https://angular.io/api/common/NgTemplateOutlet)
-[angular 1.2.18: ng-repeat problem with transclude](https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fangular%2Fangular.js%2Fissues%2F7874)
-[article - ng-content: The hidden docs](https://medium.com/claritydesignsystem/ng-content-the-hidden-docs-96a29d70d11b)
-[opensource - ngTranscludeMode & fork for 1.5](https://medium.com/claritydesignsystem/ng-content-the-hidden-docs-96a29d70d11b)
+* [AngularJs directive $compile document](https://docs.angularjs.org/api/ng/service/$compile#transclusion)
+* [AngularJs ng-transclude directive & code](https://docs.angularjs.org/api/ng/directive/ngTransclude%5C)
+* [AngularJS ng-repeat directive & code](https://docs.angularjs.org/api/ng/directive/ngRepeat#!)
+* [Angular/2 ngTemplate outlet](https://angular.io/api/common/NgTemplateOutlet)
+* [angular 1.2.18: ng-repeat problem with transclude](https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fangular%2Fangular.js%2Fissues%2F7874)
+* [article - ng-content: The hidden docs](https://medium.com/claritydesignsystem/ng-content-the-hidden-docs-96a29d70d11b)
+* [opensource - ngTranscludeMode & fork for 1.5](https://medium.com/claritydesignsystem/ng-content-the-hidden-docs-96a29d70d11b)
 
 ## License
 
