@@ -1,5 +1,6 @@
 {
-  "name": "cr-transclude",
+  "description": "An augmented ng-transclude directive that can pass data to its content",
+  "name": "@code-restory/cr-transclude",
   "version": "1.0.0",
   "main": "build/index.js",
   "license": "MIT",
@@ -7,6 +8,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "test": "karma start --single-run",
+    "test:watch": "karma start",
     "lint": "eslint --cache --format codeframe --ext mjs,js src test"
   },
   "peerDependencies": {
