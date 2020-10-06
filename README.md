@@ -18,7 +18,7 @@ yarn add @code-restory/cr-transclude
 1. Setting the module in an application:
 
 ```js
-import angular from 'angular; // or <script src="...angular global"></script>
+import angular from 'angular'; // or <script src="...angular global"></script>
 
 const crTranscludeModule = declareCrTranscludeModule(angular);
 const myAppModule = angular.module('myApp', [crTranscludeModule.name]);
