@@ -2,7 +2,12 @@
   "description": "An augmented ng-transclude directive that can pass data to its content",
   "name": "@code-restory/cr-transclude",
   "version": "1.0.6",
+  "homepage": "https://github.com/elpddev/cr-transclude",
   "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elpddev/cr-transclude"
+  },
   "license": "MIT",
   "module": "src/index.js",
   "keywords": [
