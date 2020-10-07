@@ -1,7 +1,7 @@
 {
   "description": "An augmented ng-transclude directive that can pass data to its content",
   "name": "@code-restory/cr-transclude",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage": "https://github.com/elpddev/cr-transclude",
   "main": "build/index.js",
   "repository": {
