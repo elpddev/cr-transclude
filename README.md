@@ -45,6 +45,10 @@ In the transcluded content, there is access to the grandparent scope and the pro
 </my-list>
 ```
 
+## Demo
+
+https://codesandbox.io/s/cr-transclude-gi6fd?fontsize=14&hidenavigation=1&theme=dark
+
 ## Additional Info & Attributions
 
 Many thanks to the people who contributed their knowledge and time in the github issues, documents and articles given below. They were invaluable.
