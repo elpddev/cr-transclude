@@ -10,12 +10,12 @@ export const crTranscludeDirective = [
   '$compile',
   ($compile) => ({
     restrict: 'EAC',
-    compile: function ngTranscludeCompile(tElement) {
+    compile: function crTranscludeCompile(tElement) {
       // Remove and cache any original content to act as a fallback
       const fallbackLinkFn = $compile(tElement.contents());
       tElement.empty();
 
-      return function ngTranscludePostLink(
+      return function crTranscludePostLink(
         $scope,
         $element,
         $attrs,
@@ -52,7 +52,7 @@ export const crTranscludeDirective = [
           return false;
         }
 
-        function ngTranscludeCloneAttachFn(clone, transcludedScope) {
+        function transcludeCloneAttachFn(clone, transcludedScope) {
           if (clone.length && notWhitespace(clone)) {
             $element.append(clone);
             childScope = transcludedScope;
@@ -71,7 +71,7 @@ export const crTranscludeDirective = [
         if (!$transclude) {
           throw new Error(
             'orphan',
-            'Illegal use of ngTransclude directive in the template! '
+            'Illegal use of crTransclude directive in the template! '
             + 'No parent directive that requires a transclusion found. '
             + 'Element: {0}',
           );
@@ -81,11 +81,11 @@ export const crTranscludeDirective = [
          * If the attribute is of the form: `ng-transclude="ng-transclude"`
          * then treat it like the default
          */
-        if ($attrs.ngTransclude === $attrs.$attr.ngTransclude) {
+        if ($attrs.crTransclude === $attrs.$attr.crTransclude) {
           // eslint-disable-next-line no-param-reassign
-          $attrs.ngTransclude = '';
+          $attrs.crTransclude = '';
         }
-        const slotName = $attrs.ngTransclude || $attrs.ngTranscludeSlot;
+        const slotName = $attrs.crTransclude || $attrs.crTranscludeSlot;
 
         $scope.$watch($attrs.context, (newVal, _oldVal) => {
           context = newVal;
@@ -96,7 +96,7 @@ export const crTranscludeDirective = [
          * If the slot is required and no transclusion content
          * is provided then this call will throw an error
          */
-        $transclude(ngTranscludeCloneAttachFn, null, slotName);
+        $transclude(transcludeCloneAttachFn, null, slotName);
 
         /*
          * If the slot is optional and no transclusion content
