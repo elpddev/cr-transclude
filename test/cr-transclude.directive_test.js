@@ -44,6 +44,7 @@ function moviesApp() {
   return {
     template: `
       <div>
+        <button class="update-movie" ng-click="$ctrl.updateFirstMovie()">Update movie 1</button>
         <my-list items="$ctrl.movies">
           <div class="movieRow"><span class="movieName">{{ name }}</span></div>
           <div class="moviesCount">{{ $ctrl.movies.length }}</div>
@@ -61,8 +62,21 @@ function moviesApp() {
         name: 'x-men',
         year: 2000,
         rating: 4,
-      },
-      ];
+      }];
+
+      this.updateFirstMovie = () => {
+        this.movies = [{
+          id: 1,
+          name: 'galaxy quest',
+          year: 2009,
+          rating: 5,
+        }, {
+          id: 2,
+          name: 'x-men',
+          year: 2000,
+          rating: 4,
+        }];
+      };
     }],
   };
 }
@@ -89,23 +103,27 @@ function movieProfileCompnent() {
 }
 
 describe('crTranscludeDirective', () => {
+  let crTranscludeModule = null;
   let $compile = null;
   let $rootScope = null;
 
-  beforeEach(angular.mock.inject(($injector) => {
-    $compile = $injector.get('$compile');
-    $rootScope = $injector.get('$rootScope');
-  }));
-  
+  before(() => {
+    crTranscludeModule = declareCrTranscludeModule(angular);
+  });
+
   describe('data access', () => {
     beforeEach(() => {
-      const crTranscludeModule = declareCrTranscludeModule(angular);
       const testModule = angular.module('testTransclude', [crTranscludeModule.name]);
       testModule.component('myList', myListComponent());
       testModule.component('app', moviesApp());
     });
-    
+
     beforeEach(angular.mock.module('testTransclude'));
+
+    beforeEach(angular.mock.inject(($injector) => {
+      $compile = $injector.get('$compile');
+      $rootScope = $injector.get('$rootScope');
+    }));
 
     it('should give each item in the list a customize data', () => {
       const node = $compile(`
@@ -122,14 +140,29 @@ describe('crTranscludeDirective', () => {
       assert.equal(result2, 'x-men');
     });
 
+    it('should reflect then change to the given item context when changed', () => {
+      const node = $compile(`
+        <div><app></app></div>
+      `)($rootScope);
+
+      $rootScope.$apply();
+
+      /* eslint-disable-next-line */
+      const resultBefore = $(node).find('.movieName').get(0).innerText.trim();
+
+      assert.equal(resultBefore, 'watchmen');
+
+      const btnEl = $(node).find('button.update-movie');
+      btnEl.trigger('click');
+      $rootScope.$apply();
+
+      /* eslint-disable-next-line */
+      const resultAfter = $(node).find('.movieName').get(0).innerText.trim();
+
+      assert.equal(resultAfter, 'galaxy quest');
+    });
+
     it('should have each child access to the grandparent scope data', () => {
-      const crTranscludeModule = declareCrTranscludeModule(angular);
-      const testModule = angular.module('testTransclude', [crTranscludeModule.name]);
-      testModule.component('myList', myListComponent());
-      testModule.component('app', moviesApp());
-
-      angular.mock.module('testTransclude')
-
       const node = $compile(`
         <app></app>
       `)($rootScope);
@@ -141,18 +174,22 @@ describe('crTranscludeDirective', () => {
       assert.equal(result, '2');
     });
   });
-  
+
   describe('slot transclusions', () => {
     beforeEach(() => {
-      const crTranscludeModule = declareCrTranscludeModule(angular);
       const testModule = angular.module('testTransclude', [crTranscludeModule.name]);
       testModule.component('myCard', cardComponent());
-      testModule.component('movieProfile', movieProfileComponent());
+      testModule.component('movieProfile', movieProfileCompnent());
     });
-    
-    beforeEach(angular.mock.module('testTransclude'));  
-    
-    it('should transclude slot', () => {  
+
+    beforeEach(angular.mock.module('testTransclude'));
+
+    beforeEach(angular.mock.inject(($injector) => {
+      $compile = $injector.get('$compile');
+      $rootScope = $injector.get('$rootScope');
+    }));
+
+    it('should transclude slot', () => {
       const node = $compile(`
         <movie-profile></movie-profile>
       `)($rootScope);
@@ -163,9 +200,9 @@ describe('crTranscludeDirective', () => {
       const headerResult = $(node).find('.my-card .header').get(0).innerText.trim();
       const bodyResult = $(node).find('.my-card .body').get(0).innerText.trim();
       assert.equal(headerResult, 'watchmen');
-      assert.equal(bodyResult, '2009'):
+      assert.equal(bodyResult, '2009');
     });
-    
+
     it('should use fallback html content when transcluded slot is optional and not given', () => {
       const node = $compile(`
         <movie-profile></movie-profile>
@@ -174,8 +211,8 @@ describe('crTranscludeDirective', () => {
       $rootScope.$apply();
 
       /* eslint-disable-next-line */
-      const headerResult = $(node).find('.my-card .footer').get(0).innerText.trim();
+      const footerResult = $(node).find('.my-card .footer').get(0).innerText.trim();
       assert.equal(footerResult, 'default card footer');
     });
-  });  
+  });
 });
