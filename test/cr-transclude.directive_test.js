@@ -1,7 +1,6 @@
+/* global angular, $ */
+
 import assert from 'assert';
-import $ from 'jquery';
-import angular from 'angular';
-import 'angular-mocks';
 import { declareCrTranscludeModule } from '../src/declare-cr-transclude-module';
 
 function myListComponent() {

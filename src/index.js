@@ -1,8 +1,8 @@
-import { crTranscludeDirective } from './cr-transclude.directive';
+import { crTranscludeDirectiveFactory } from './cr-transclude.directive';
 import { crTranscludeModuleName, declareCrTranscludeModule } from './declare-cr-transclude-module';
 
 export {
-  crTranscludeDirective,
+  crTranscludeDirectiveFactory,
   crTranscludeModuleName,
   declareCrTranscludeModule,
 };
