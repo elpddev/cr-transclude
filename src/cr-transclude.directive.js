@@ -2,11 +2,10 @@
 /* eslint import/prefer-default-export: 0 */
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import angular from 'angular';
 
 const NODE_TYPE_TEXT = 3;
 
-export const crTranscludeDirective = [
+export const crTranscludeDirectiveFactory = (angular) => ([
   '$compile',
   ($compile) => ({
     restrict: 'EAC',
@@ -108,4 +107,4 @@ export const crTranscludeDirective = [
       };
     },
   }),
-];
+]);
