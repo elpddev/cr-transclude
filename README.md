@@ -37,11 +37,11 @@ const myAppModule = angular.module('myApp', [crTranscludeModule.name]);
 In the transcluded content, there is access to the grandparent scope and the properties given to the context bindings.
 
 ```js
-<div>{{ $ctrl.listName }}</div.
+<div>\{\{ $ctrl.listName \}\}</div>
 
 <my-list items="$ctrl.movies">
-   <div>From context: {{ name }}</div>
-   <div>From grandparent: {{ $ctrl.listName }}</div>
+   <div>From context: \{\{ name \}\}</div>
+   <div>From grandparent: \{\{ $ctrl.listName \}\}</div>
 </my-list>
 ```
 
