@@ -58,8 +58,10 @@ Many thanks to the people who contributed their knowledge and time in the github
 * [AngularJS ng-repeat directive & code](https://docs.angularjs.org/api/ng/directive/ngRepeat#!)
 * [Angular/2 ngTemplate outlet](https://angular.io/api/common/NgTemplateOutlet)
 * [angular 1.2.18: ng-repeat problem with transclude](https://github.com/angular/angular.js/issues/7874)
+* [ng-transclude should not create new sibling scope](https://github.com/angular/angular.js/issues/5489)
 * [article - ng-content: The hidden docs](https://medium.com/claritydesignsystem/ng-content-the-hidden-docs-96a29d70d11b)
 * [opensource - ngTranscludeMode](https://github.com/Izhaki/ngTranscludeMod/blob/master/ngTranscludeMod.js) & [fork for 1.5](https://github.com/NickBolles/ngTranscludeMod/blob/Angular1.5-multi-slot/ngTranscludeMod.js)
+* [opensource - angular-directives-utils](https://github.com/gogoout/angular-directives-utils)
 
 ## License
 
