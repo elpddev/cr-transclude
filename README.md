@@ -1,5 +1,5 @@
 # cr-transclude
-Semi Template Transclude Directive for AngularJs/1 
+Template Transclude Directive for AngularJs/1 
 
 ![Node.js CI](https://github.com/elpddev/cr-transclude/workflows/Node.js%20CI/badge.svg?branch=main)
 
